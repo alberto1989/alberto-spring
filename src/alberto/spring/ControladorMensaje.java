@@ -22,7 +22,7 @@ public class ControladorMensaje {
     
     @RequestMapping(value="/mensaje",method=RequestMethod.GET,headers = {"Accept=application/json"})
     @ResponseBody String buscartodos() throws Exception {
-        
+       /* 
         //Esto va ser obtenido atraves del DAOmensaje y metodo obtener todos
         Mensaje m1=new Mensaje();
         m1.setTitulo("Spring-boot");
@@ -46,6 +46,10 @@ public class ControladorMensaje {
         ObjectMapper mapper=new ObjectMapper();
         
         return mapper.writeValueAsString(arreglo);
+*/
+       DAOMensaje dao=new DAOMensaje();
+       ObjectMapper mapper=new ObjectMapper();
+       return mapper.writeValueAsString(dao.buscarTodos());
     }
     
     
